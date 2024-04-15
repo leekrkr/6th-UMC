@@ -12,28 +12,6 @@ body {
 } 
 
 /* header 시작 */
-.BarTitle {
-  color : white;
-  margin-top : 10px;
-  font-size: 20px;
-}
-
-.BarContainer {
-    background-color: rgb(29, 24, 87);
-}
-
-.BarWrap {
-    max-width: 1400px;
-    height: 64px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-}
-
-.BarWrapRight {
-    display: flex;
-}
-
 .BarWrapRight ul {
     display: flex;
     margin-left: 195%;
@@ -44,11 +22,5 @@ body {
     margin-right: 10px;
 }
 
-.BarItemWrap {
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-}
-/* header 끝 */
 
 

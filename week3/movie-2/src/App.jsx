@@ -4,7 +4,7 @@ import Nowplayingpage from "./pages/Nowplayingpage/Nowplayingpage";
 import Popularpage from "./pages/Popularpage/Popularpage";
 import Topratedpage from "./pages/Topratedpage/Topratedpage";
 import Upcoming from "./pages/Upcoming/Upcoming";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar/NavBar";
 
 function App() {
   return (

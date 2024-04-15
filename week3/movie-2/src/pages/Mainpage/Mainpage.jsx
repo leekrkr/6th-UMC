@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 import {
   Banner,
   MainMiddle,
   MainBottom
 
-} from './MainStyle'
+} from './MainStyle';
 
 export default function Mainpage() {
   return (
