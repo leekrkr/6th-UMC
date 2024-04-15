@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Mainpage from "./pages/Mainpage";
-import Nowplayingpage from "./pages/Nowplayingpage";
-import Popularpage from "./pages/Popularpage";
-import Topratedpage from "./pages/Topratedpage";
-import Upcoming from "./pages/Upcoming";
+import Mainpage from "./pages/Mainpage/Mainpage";
+import Nowplayingpage from "./pages/Nowplayingpage/Nowplayingpage";
+import Popularpage from "./pages/Popularpage/Popularpage";
+import Topratedpage from "./pages/Topratedpage/Topratedpage";
+import Upcoming from "./pages/Upcoming/Upcoming";
 import NavBar from "./components/NavBar";
 
 function App() {

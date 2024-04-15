@@ -51,30 +51,4 @@ body {
 }
 /* header 끝 */
 
-.mainContainer {
-    height: 250px;
-    margin: 0 auto;
-    padding: 32px 0;
-    background-color: black;
-}
-
-.mainMiddle {
-  margin-top: 110px;
-  color: white;
-  font-size: 30px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-
-.mainBottom {
-  color : white;
-  font-size : 45px;
-  font-weight: bold;
-  margin-top : 210px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-
 
