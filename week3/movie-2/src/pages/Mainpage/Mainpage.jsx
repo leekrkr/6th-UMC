@@ -9,8 +9,6 @@ import {
 export default function Mainpage() {
   return (
 
-
-
     <Banner>
       <MainMiddle>
         환영합니다

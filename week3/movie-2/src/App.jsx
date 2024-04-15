@@ -5,6 +5,7 @@ import Popularpage from "./pages/Popularpage/Popularpage";
 import Topratedpage from "./pages/Topratedpage/Topratedpage";
 import Upcoming from "./pages/Upcoming/Upcoming";
 import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/toprated" element={<Topratedpage />} />
             <Route path="/upcoming" element={<Upcoming />} />
           </Routes>
+          <Footer/>
         </BrowserRouter>
     </div>
   );

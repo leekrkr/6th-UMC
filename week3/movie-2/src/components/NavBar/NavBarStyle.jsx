@@ -27,6 +27,10 @@ export const BarItemWrap = styled.div`
 text-decoration: none;
 color: white;
 font-weight: 600;
+&:hover {
+    transform: scale(1.2);
+    transition-duration: 0.5s;
+  }
 `;
 
 export const ListContainer = styled.ul`
@@ -37,6 +41,7 @@ margin-left: 195%;
 export const ItemList = styled.li`
 padding: 10px;
 margin-right: 10px;
+
 `;
 
 
