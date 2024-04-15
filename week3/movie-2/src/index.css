@@ -1,0 +1,96 @@
+@import 'reset.css';
+
+body {
+    background-color: #fff;
+}
+
+.rootWrap {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+} 
+
+/* header 시작 */
+.BarTitle {
+  color : white;
+  margin-top : 10px;
+  font-size: 20px;
+}
+
+.BarContainer {
+    background-color: rgb(29, 24, 87);
+}
+
+.BarWrap {
+    max-width: 1400px;
+    height: 64px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.BarWrapRight {
+    display: flex;
+}
+
+.BarWrapRight ul {
+    display: flex;
+    margin-left: 195%;
+}
+
+.BarWrapRight li {
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.BarItemWrap {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+/* header 끝 */
+
+.page-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 32px 0;
+}
+
+
+.movies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie-container {
+    width: 250px;
+    margin: 16px;
+    background-color: #373b69;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.movie-container img {
+    max-width: 100%;
+}
+
+.movie-info {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.movie-info h4 {
+    margin: 0;
+}
+
+.movie-info span {
+    margin-left: 3px;
+}
+
+

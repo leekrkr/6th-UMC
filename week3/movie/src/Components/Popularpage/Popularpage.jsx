@@ -1,13 +1,10 @@
 import styled from 'styled-components';
+import React from "react";
 
-function Popularpage(){
+export default function Popularpage(){
     return(
 
-        <div>
-            
-        </div>
+        <div>popular</div>
     );
 }
 
-
-export default Popularpage;

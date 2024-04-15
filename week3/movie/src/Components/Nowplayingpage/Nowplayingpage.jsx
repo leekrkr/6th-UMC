@@ -1,13 +1,12 @@
 import styled from 'styled-components';
+import React from "react";
 
-function Nowplayingpage(){
+export default function Nowplayingpage(){
     return(
 
         <div>
-            
+            nowplaying
         </div>
     );
 }
 
-
-export default Nowplayingpage;

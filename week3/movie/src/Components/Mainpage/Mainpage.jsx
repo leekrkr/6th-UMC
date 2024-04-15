@@ -1,20 +1,8 @@
-import {
-    Banner,
-    BannerText
-} from "./MainStyle";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 
-function Mainpage(){
-
-
-    let navigate = useNavigate(); // 페이지 이동
+export default function Mainpage(){
 
     return(
-        <Banner>
-            <BannerText>환영합니다</BannerText>
-        </Banner>
+        <div>main</div>
     );
 }
-
-
-export default Mainpage;

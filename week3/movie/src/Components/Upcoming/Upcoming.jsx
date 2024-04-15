@@ -1,12 +1,8 @@
 import styled from 'styled-components';
+import React from "react";
 
-function Upcoming(){
+export default function Upcoming(){
     return(
-        <div>
-            
-        </div>
+        <div>upcoming</div>
     );
 }
-
-
-export default Upcoming;
