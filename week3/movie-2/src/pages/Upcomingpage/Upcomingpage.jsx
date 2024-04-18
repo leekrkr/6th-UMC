@@ -1,23 +1,23 @@
 import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
-import Toprated from '../../components/Toprated';
+import Upcoming from '../../components/Upcoming';
 
 const API_KEY = '560edcab022391706f07d9e49f92af34';
 
-export default function Topratedpage() {
+export default function Upcomingpage() {
 
-  const [topRated, settopRated ] = useState([]);
+  const [upComing, setupComing ] = useState([]);
 
   const getData = async () => {
-    const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=ko-KR&page=1`;
+    const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=ko-KR&page=1`;
     const response = await fetch(url);
     console.log(response);
     if (response.status == 200){
       const data = await response.json();
       console.log(data);
 
-      settopRated(data.results);
+      setupComing(data.results);
 
     }
   }
@@ -30,9 +30,9 @@ export default function Topratedpage() {
   return (
     <div className='appContainer'>
     { 
-      topRated.map((item) => {
+      upComing.map((item) => {
         return (
-          <Toprated
+          <Upcoming
             title = {item.title}
             poster_path = {item.poster_path}
             vote_average = {item.vote_average}
