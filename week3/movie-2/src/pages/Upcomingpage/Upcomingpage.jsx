@@ -2,6 +2,11 @@ import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Upcoming from '../../components/Upcoming';
+import {
+  AppContainer
+
+} from '../pageStyle';
+
 
 const API_KEY = '560edcab022391706f07d9e49f92af34';
 
@@ -28,7 +33,7 @@ export default function Upcomingpage() {
 
 
   return (
-    <div className='appContainer'>
+    <AppContainer>
     { 
       upComing.map((item) => {
         return (
@@ -40,6 +45,6 @@ export default function Upcomingpage() {
         )
       })
     }
-  </div>
+  </AppContainer>
   );
 }

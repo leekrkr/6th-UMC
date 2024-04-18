@@ -2,6 +2,10 @@ import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Nowplaying from '../../components/Nowplaying';
+import {
+  AppContainer
+
+} from '../pageStyle';
 
 const API_KEY = '560edcab022391706f07d9e49f92af34';
 
@@ -28,7 +32,7 @@ export default function Nowplayingpage() {
 
 
   return (
-    <div className='appContainer'>
+    <AppContainer>
     { 
       nowPlaying.map((item) => {
         return (
@@ -40,6 +44,6 @@ export default function Nowplayingpage() {
         )
       })
     }
-  </div>
+  </AppContainer>
   );
 }

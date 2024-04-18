@@ -1,21 +1,27 @@
 import React from 'react'
+import {
+    MovieContainer,
+    MovieInfo,
+    MovieImg
+  
+  } from './movieStyle';
 
 
-const baseUrl = 'https://image.tmdb.org/t/p/w500';
+const baseUrl = 'https://image.tmdb.org/t/p/w200';
 
 export default function Toprated ( {title, vote_average, poster_path}) {
 
     return(
 
-        <div className='movieContainer'>
-            <div className='movieImg'>
+        <MovieContainer>
+            <MovieImg>
                 <img src= {baseUrl + poster_path} alt="영화포스터"/>
-            </div>
-            <div className='movieInfo'>
+            </MovieImg>
+            <MovieInfo>
                 <h4>{title}</h4>
                 <span>{vote_average}</span>
-            </div>
-        </div>
+            </MovieInfo>
+        </MovieContainer>
 
     )
 }

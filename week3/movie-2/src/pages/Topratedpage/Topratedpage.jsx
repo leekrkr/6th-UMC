@@ -2,6 +2,10 @@ import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Toprated from '../../components/Toprated';
+import {
+  AppContainer
+
+} from '../pageStyle';
 
 const API_KEY = '560edcab022391706f07d9e49f92af34';
 
@@ -28,7 +32,7 @@ export default function Topratedpage() {
 
 
   return (
-    <div className='appContainer'>
+    <AppContainer>
     { 
       topRated.map((item) => {
         return (
@@ -40,6 +44,6 @@ export default function Topratedpage() {
         )
       })
     }
-  </div>
+  </AppContainer>
   );
 }

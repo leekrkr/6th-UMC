@@ -2,6 +2,10 @@ import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Popular from '../../components/Popular';
+import {
+  AppContainer
+
+} from '../pageStyle';
 
 const API_KEY = '560edcab022391706f07d9e49f92af34';
 
@@ -28,7 +32,7 @@ export default function Popularpage() {
 
 
   return (
-    <div className='appContainer'>
+    <AppContainer>
     { 
       popular.map((item) => {
         return (
@@ -40,6 +44,6 @@ export default function Popularpage() {
         )
       })
     }
-  </div>
+  </AppContainer>
   );
 }
