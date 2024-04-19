@@ -22,7 +22,7 @@ export default function Popularpage() {
       if (response.ok) {
         const data = await response.json();
         setPopular(data.results);
-        setloading(false); // 데이터 로드가 완료되면 로딩 상태를 false로 변경합니다.
+        setloading(false); 
       }
     } catch (error) {
     
