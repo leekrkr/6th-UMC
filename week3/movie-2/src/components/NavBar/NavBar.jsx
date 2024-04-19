@@ -21,6 +21,9 @@ export default function NavBar() {
                 </Link>
                 <ListContainer>
                     <ItemList>
+                        <BarItemWrap>로그인</BarItemWrap>
+                    </ItemList>
+                    <ItemList>
                         <Link to='/popular'>
                             <BarItemWrap>Popular</BarItemWrap>
                         </Link>

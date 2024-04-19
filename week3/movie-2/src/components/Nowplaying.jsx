@@ -2,7 +2,9 @@ import React from 'react'
 import {
     MovieContainer,
     MovieInfo,
-    MovieImg
+    MovieImg,
+    Title,
+    Vote
   
   } from './movieStyle';
 
@@ -13,14 +15,13 @@ export default function Nowplaying ( {title, vote_average, poster_path}) {
 
     return(
 
-
         <MovieContainer>
             <MovieImg>
                 <img src= {baseUrl + poster_path} alt="영화포스터"/>
             </MovieImg>
             <MovieInfo>
-                <h4>{title}</h4>
-                <span>{vote_average}</span>
+                <Title>{title}</Title>
+                <Vote>{vote_average}</Vote>
             </MovieInfo>
         </MovieContainer>
 

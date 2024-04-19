@@ -6,7 +6,7 @@ width : 200px;
 background-color: rgb(97, 95, 118);
 color: white;
 border-radius: 5px;
-height: 400px;
+height: 370px;
 `;
 
 export const MovieInfo = styled.div`
@@ -15,10 +15,19 @@ height : 10px;
 width : 100%;
 justify-content: space-between;
 margin: 10px;
-font-size: 15px;
+font-size: 13px;
 `;
 
 export const MovieImg = styled.div`
 width :100%;
 border-radius: 5px;
+`;
+
+export const Title = styled.div`
+margin-left : 0px;
+
+`;
+
+export const Vote = styled.div`
+margin-right: 20px;
 `;

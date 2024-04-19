@@ -6,6 +6,7 @@ import {
   AppContainer
 
 } from '../pageStyle';
+import Loading from '../Loading';
 
 
 const API_KEY = '560edcab022391706f07d9e49f92af34';
@@ -13,17 +14,19 @@ const API_KEY = '560edcab022391706f07d9e49f92af34';
 export default function Upcomingpage() {
 
   const [upComing, setupComing ] = useState([]);
+  const [loading, setloading] = useState(true);
 
   const getData = async () => {
-    const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=ko-KR&page=1`;
-    const response = await fetch(url);
-    console.log(response);
-    if (response.status == 200){
-      const data = await response.json();
-      console.log(data);
-
-      setupComing(data.results);
-
+    try {
+      const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=ko-KR&page=1`;
+      const response = await fetch(url);
+      if (response.ok) {
+        const data = await response.json();
+        setupComing(data.results);
+        setloading(false); // 데이터 로드가 완료되면 로딩 상태를 false로 변경합니다.
+      }
+    } catch (error) {
+    
     }
   }
 
@@ -34,17 +37,18 @@ export default function Upcomingpage() {
 
   return (
     <AppContainer>
-    { 
-      upComing.map((item) => {
-        return (
+      {loading ? ( 
+        <Loading /> 
+      ) : (
+        upComing.map((item) => (
           <Upcoming
-            title = {item.title}
-            poster_path = {item.poster_path}
-            vote_average = {item.vote_average}
-           />
-        )
-      })
-    }
-  </AppContainer>
+            key={item.id}
+            title={item.title}
+            poster_path={item.poster_path}
+            vote_average={item.vote_average}
+          />
+        ))
+      )}
+    </AppContainer>
   );
 }

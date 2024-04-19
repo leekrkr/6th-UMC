@@ -35,13 +35,13 @@ font-weight: 600;
 
 export const ListContainer = styled.ul`
 display: flex;
-margin-left: 195%;
+margin-left: 155%;
 `;
 
 export const ItemList = styled.li`
 padding: 10px;
 margin-right: 10px;
-
+white-space:nowrap; 
 `;
 
 
