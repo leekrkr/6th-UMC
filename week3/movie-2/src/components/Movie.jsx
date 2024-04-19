@@ -11,7 +11,7 @@ import {
 
 const baseUrl = 'https://image.tmdb.org/t/p/w200';
 
-export default function Nowplaying ( {title, vote_average, poster_path}) {
+export default function Movie ( {title, vote_average, poster_path}) {
 
     return(
 

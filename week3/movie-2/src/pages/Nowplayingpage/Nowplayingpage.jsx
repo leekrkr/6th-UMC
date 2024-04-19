@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
-import Nowplaying from '../../components/Nowplaying';
+import Movie from '../../components/Movie';
 import {
   AppContainer
 
@@ -43,7 +43,7 @@ export default function Nowplayingpage() {
         <Loading /> 
       ) : (
         nowPlaying.map((item) => (
-          <Nowplaying
+          <Movie
             key={item.id}
             title={item.title}
             poster_path={item.poster_path}

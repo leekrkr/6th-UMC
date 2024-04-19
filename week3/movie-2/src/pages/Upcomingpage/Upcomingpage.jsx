@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
-import Upcoming from '../../components/Upcoming';
+import Movie from '../../components/Movie';
 import {
   AppContainer
 
@@ -41,7 +41,7 @@ export default function Upcomingpage() {
         <Loading /> 
       ) : (
         upComing.map((item) => (
-          <Upcoming
+          <Movie
             key={item.id}
             title={item.title}
             poster_path={item.poster_path}

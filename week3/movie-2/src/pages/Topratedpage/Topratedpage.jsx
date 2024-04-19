@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
-import Toprated from '../../components/Toprated';
+import Movie from '../../components/Movie';
 import {
   AppContainer
 
@@ -40,7 +40,7 @@ export default function Topratedpage() {
         <Loading /> 
       ) : (
        topRated.map((item) => (
-          <Toprated
+          <Movie
             key={item.id}
             title={item.title}
             poster_path={item.poster_path}

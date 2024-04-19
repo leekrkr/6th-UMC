@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
-import Popular from '../../components/Popular';
+import Movie from '../../components/Movie';
 import {
   AppContainer
 
@@ -17,7 +17,7 @@ export default function Popularpage() {
 
   const getData = async () => {
     try {
-      const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=ko-KR&page=1`;
+      const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=ko-KR&page=1`;
       const response = await fetch(url);
       if (response.ok) {
         const data = await response.json();
@@ -40,7 +40,7 @@ export default function Popularpage() {
         <Loading /> 
       ) : (
        popular.map((item) => (
-          <Popular
+          <Movie
             key={item.id}
             title={item.title}
             poster_path={item.poster_path}
