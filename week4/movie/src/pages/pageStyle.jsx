@@ -8,4 +8,3 @@ gap: 16px;
 margin : 10px;
 justify-content : center;
 `;
-
