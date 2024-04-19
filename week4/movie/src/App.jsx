@@ -4,6 +4,7 @@ import Nowplayingpage from "./pages/Nowplayingpage/Nowplayingpage";
 import Popularpage from "./pages/Popularpage/Popularpage";
 import Topratedpage from "./pages/Topratedpage/Topratedpage";
 import Upcomingpage from "./pages/Upcomingpage/Upcomingpage";
+import NotFoundpage from "./pages/NotFoundpage/NotFoundpage";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 
