@@ -32,4 +32,5 @@ font-style : oblique;
 export const Text4 = styled.div`
 font-size : 30px;
 margin : 20px;
+cursor : pointer;
 `;

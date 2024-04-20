@@ -1,4 +1,5 @@
 import React from 'react';
+import {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {
     BarContainer,
@@ -11,6 +12,11 @@ import {
 } from './NavBarStyle';
 
 export default function NavBar() {
+    const[contents,setContents] = useState('로그인');
+
+    const changeContents = () => {
+        setContents(prev => prev === "로그아웃" ? "로그인" : "로그아웃")
+    }
   return (
 
     <BarContainer>
@@ -21,7 +27,7 @@ export default function NavBar() {
                 </Link>
                 <ListContainer>
                     <ItemList>
-                        <BarItemWrap>로그인</BarItemWrap>
+                        <BarItemWrap onClick={changeContents}>{contents}</BarItemWrap>
                     </ItemList>
                     <ItemList>
                         <Link to='/popular'>

@@ -1,4 +1,6 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import {
     NFcontainer,
     Textcontainer,
@@ -10,6 +12,23 @@ import {
   } from './NotFoundStyle';
 
 export default function NotFound () {
+
+    let [info, setInfo] = useState([false]);
+
+
+    function outMouseOver(index) {
+        let newInfo = [...info];
+        newInfo[index] = false;
+        setInfo(newInfo);
+      }
+      function isMouseOver(index) {
+        let newInfo = [...info];
+        newInfo[index] = true;
+        setInfo(newInfo);
+      }
+
+    let navigate = useNavigate();
+
     return(
 
 
@@ -18,7 +37,10 @@ export default function NotFound () {
                 <Text1>Oops!</Text1>
                 <Text2>예상치 못한 에러가 발생했습니다; ~.~</Text2>
                 <Text3>Not Found</Text3>
-                <Text4>메인으로 이동하기</Text4>
+                <Text4 onClick={()=>{
+                        navigate(`/`);
+                    }}>
+                메인으로 이동하기</Text4>
             </Textcontainer>
         </NFcontainer>
 

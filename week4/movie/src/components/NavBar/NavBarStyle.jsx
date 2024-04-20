@@ -35,7 +35,7 @@ font-weight: 600;
 
 export const ListContainer = styled.ul`
 display: flex;
-margin-left: 155%;
+margin-left: 870px;
 `;
 
 export const ItemList = styled.li`
