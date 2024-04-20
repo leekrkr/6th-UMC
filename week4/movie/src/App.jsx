@@ -5,6 +5,7 @@ import Popularpage from "./pages/Popularpage/Popularpage";
 import Topratedpage from "./pages/Topratedpage/Topratedpage";
 import Upcomingpage from "./pages/Upcomingpage/Upcomingpage";
 import NotFoundpage from "./pages/NotFoundpage/NotFoundpage";
+import MovieDetailpage from "./pages/MovieDetailpage/MovieDetailpage";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/toprated" element={<Topratedpage />} />
             <Route path="/upcoming" element={<Upcomingpage />} />
             <Route path="/*" element={<NotFoundpage />} />
+            <Route path ="/movie/:title" element={<MovieDetailpage />} />​
           </Routes>
           <Footer/>
         </BrowserRouter>
