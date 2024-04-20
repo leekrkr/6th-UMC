@@ -17,7 +17,7 @@ export default function Popularpage() {
 
   const getData = async () => {
     try {
-      const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=ko-KR&page=1`;
+      const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
       const response = await fetch(url);
       if (response.ok) {
         const data = await response.json();
@@ -41,10 +41,12 @@ export default function Popularpage() {
       ) : (
        popular.map((item) => (
           <Movie
-            key={item.id}
-            title={item.title}
-            poster_path={item.poster_path}
-            vote_average={item.vote_average}
+          key={item.id}
+          title={item.title}
+          poster_path={item.poster_path}
+          vote_average={item.vote_average}
+          overview={item.overview}
+          release_date={item.release_date}
           />
         ))
       )}

@@ -12,13 +12,13 @@ import {
 
 const baseUrl = 'https://image.tmdb.org/t/p/w200';
 
-export default function Movie ( {title, vote_average, poster_path, overview}) {
+export default function Movie ( {title, vote_average, poster_path, overview, release_date}) {
 
     const navigate = useNavigate();
 
     const onClickMovieItem = () => {
         navigate(`/movie/${title}`,{
-        state : { title, vote_average, poster_path, overview }
+        state : { title, vote_average, poster_path, overview, release_date }
     })
     }
 
