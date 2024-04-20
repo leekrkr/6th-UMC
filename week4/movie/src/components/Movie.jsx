@@ -21,7 +21,7 @@ export default function Movie ( {title, vote_average, poster_path}) {
             </MovieImg>
             <MovieInfo>
                 <Title>{title}</Title>
-                <Vote>{vote_average}</Vote>
+                <Vote>⭐️&nbsp;{vote_average}</Vote>
             </MovieInfo>
         </MovieContainer>
 
