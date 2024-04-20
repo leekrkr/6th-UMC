@@ -17,7 +17,6 @@ align-items: center;
 `;
 
 export const MainBottom = styled.div`
-
 color : white;
 font-size : 45px;
 font-weight: bold;
@@ -25,4 +24,23 @@ margin-top : 210px;
 text-align: center;
 justify-content: center;
 align-items: center;
+`;
+
+export const SearchBox = styled.input`
+width : 400px;
+height : 40px;
+border-radius : 18px;
+margin-left : 528px;
+margin-top : 20px;
+`;
+
+export const Boxcontainer = styled.div`
+display : flex;
+justify-content: space-between;
+`;
+
+export const Icon = styled.div`
+position : absolute;
+margin-left : 65%;
+margin-top: 21px;
 `;
