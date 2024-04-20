@@ -31,10 +31,11 @@ width : 400px;
 height : 40px;
 border-radius : 18px;
 margin-left : 528px;
-margin-top : 20px;
+
 `;
 
 export const Boxcontainer = styled.div`
+margin-top : 30px;
 display : flex;
 justify-content: space-between;
 `;
@@ -42,5 +43,4 @@ justify-content: space-between;
 export const Icon = styled.div`
 position : absolute;
 margin-left : 65%;
-margin-top: 21px;
 `;

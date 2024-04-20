@@ -15,7 +15,7 @@ height : 10px;
 width : 100%;
 justify-content: space-between;
 margin: 10px;
-font-size: 13px;
+font-size: 14px;
 `;
 
 export const MovieImg = styled.div`

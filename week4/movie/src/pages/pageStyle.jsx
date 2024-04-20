@@ -5,6 +5,12 @@ width: 100%;
 display: flex;
 flex-wrap: wrap;
 gap: 16px;
-margin : 10px;
-justify-content : center;
+margin-top : 15px;
+justify-content: center;
+align-items: center;
+`;
+
+export const LoadingContainer = styled.div`
+justify-content: center;
+align-items: center;
 `;

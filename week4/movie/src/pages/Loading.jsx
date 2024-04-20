@@ -1,15 +1,18 @@
 import React from 'react';
 import { Oval }from 'react-loader-spinner';
+import {LoadingContainer} from './pageStyle';
 
 function Loading() {
     return (
-        <Oval
-            type="Oval"
-            color="#3d66ba"
-            height={30}
-            width={30}
-            timeout={3000}
-        />
+        <LoadingContainer>
+            <Oval
+                type="Oval"
+                color="#3d66ba"
+                height={30}
+                idth={30}
+                timeout={3000}
+            />
+        </LoadingContainer>
     );
 }
 
