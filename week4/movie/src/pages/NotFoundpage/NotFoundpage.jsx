@@ -13,20 +13,6 @@ import {
 
 export default function NotFound () {
 
-    let [info, setInfo] = useState([false]);
-
-
-    function outMouseOver(index) {
-        let newInfo = [...info];
-        newInfo[index] = false;
-        setInfo(newInfo);
-      }
-      function isMouseOver(index) {
-        let newInfo = [...info];
-        newInfo[index] = true;
-        setInfo(newInfo);
-      }
-
     let navigate = useNavigate();
 
     return(
