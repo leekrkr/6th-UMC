@@ -1,14 +1,4 @@
-import styled from "styled-components";
-
-export const SignupContainer = styled.div`
-`;
-
-export const SignupForm = styled.div`
-margin-top : 40px;
-display: flex; 
-justify-content: center; 
-align-items: center;
-`;
+import styled from 'styled-components';
 
 export const Container = styled.div`
   max-width: 400px;
@@ -20,24 +10,28 @@ export const Input = styled.input`
 width : 500px;
 height : 40px;
 border-radius : 25px;
+margin-left : 33%;
 margin-bottom : 20px;
+font-style: oblique;
 font-size : 15px;
 font-family: var(--font);
-color: black;
+color: rgb(208, 208, 208);
 `;
 
 export const ErrorMessage = styled.div`
-color: red;
-font-size : 13px;
-margin-left : 10px;
-margin-bottom : 13px;
+  color: red;
+  font-size: 0.8rem;
+  text-align: center;
+justify-content: center;
+align-items: center;
 `;
 
 export const Submit = styled.button`
-width : 510px;
+width : 500px;
 height : 55px;
 border-radius : 25px;
 text-align: center;
+margin-left : 33%;
 color : black;
 font-size : 18px;
 font-family: var(--font);
