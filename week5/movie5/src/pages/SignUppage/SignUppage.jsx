@@ -8,7 +8,7 @@ import {
     SignupForm
   
 } from './SignupStyle';
-import { useState } from "react";
+import { useState, useEffect} from "react";
 
 
 export default function SignUppage() {
@@ -24,16 +24,34 @@ export default function SignUppage() {
     const [ageError, setAgeError] = useState('');
     const [passwordError, setPasswordError] = useState('');
     const [pwConfirmError, setPwConfirmError] = useState('');
-  
+    
+    const [formValid, setFormValid] = useState(false);
+
+    useEffect(() => {
+        const validateForm = () => {
+            if (fullname && email && age && password && pwConfirm &&
+                !fullnameError && !emailError && !ageError && !passwordError && !pwConfirmError) {
+                setFormValid(true);
+            } else {
+                setFormValid(false);
+            }
+        };
+        validateForm();
+    }, [fullname, email, age, password, pwConfirm, fullnameError, emailError, ageError, passwordError, pwConfirmError]);
+
+
     const onNameChange = (e) => {
       const value = e.target.value;
       setFullname(value);
       if (!value) {
         setFullnameError('이름을 입력해주세요!');
-      } else {
+      } 
+      else {
         setFullnameError('');
       }
+
     };
+
   
     const onEmailChange = (e) => {
       const value = e.target.value;
@@ -58,7 +76,6 @@ export default function SignUppage() {
   
     } else if(isNaN(value) === true){
         setAgeError('나이는 숫자로 입력해주세요!');
-    
     }
     else if (value < 0){
         setAgeError('나이는 양수여야합니다!');
@@ -71,7 +88,6 @@ export default function SignUppage() {
   
     } else {
         setAgeError('');
-  
     }
     }
   
@@ -94,8 +110,8 @@ export default function SignUppage() {
           setPasswordError('비밀번호는 영어, 숫자, 특수문자를 포함해주세요!');
       }
       else {
-          setPasswordError('');
-  
+            setPasswordError('');
+
       }
     };
   
@@ -104,34 +120,44 @@ export default function SignUppage() {
       setPwConfirm(value);
       if (!value) {
           setPwConfirmError('비밀번호를 다시 입력해주세요!');
+
   
       } else if (value !== password) {
           setPwConfirmError('비밀번호가 일치하지 않습니다!');
   
-      } else {
+      } 
+      else {
           setPwConfirmError('');
-  
       }
     };
   
     const handleSubmit = (e) => {
-      e.preventDefault();
+        e.preventDefault();
   
-      if (!fullname) {
-        setFullnameError('이름을 입력해주세요!');
-      }
-      if (!email) {
-        setEmailError('이메일을 입력해주세요!');
-      }
-      if(!age){
-        setAgeError('나이를 입력해주세요!');
-      }
-      if (!password) {
-        setPasswordError('비밀번호를 입력해주세요!');
-      }
-      if (!pwConfirm) {
-        setPwConfirmError('비밀번호를 다시 입력해주세요!');
-      }
+        if (!fullname) {
+            setFullnameError('이름을 입력해주세요!');
+        }
+        if (!email) {
+            setEmailError('이메일을 입력해주세요!');
+        }
+        if(!age){
+            setAgeError('나이를 입력해주세요!');
+        }
+        if (!password) {
+            setPasswordError('비밀번호를 입력해주세요!');
+        }
+        if (!pwConfirm) {
+            setPwConfirmError('비밀번호를 다시 입력해주세요!');
+        }
+        if (formValid) {
+            console.log("Fullname:", fullname);
+            console.log("Email:", email);
+            console.log("Age:", age);
+            console.log("Password:", password);
+            console.log("PwConfirm:", pwConfirm);
+        }
+
+
     };
   
     return (
@@ -160,7 +186,7 @@ export default function SignUppage() {
                     {pwConfirmError && <ErrorMessage>{pwConfirmError}</ErrorMessage>}
                 </div>
                 <div>
-                    <Submit type="submit">가입하기</Submit>
+                    <Submit type="submit" style={{ backgroundColor: formValid ? 'yellow' : 'gray' }} >가입하기</Submit>
                 </div>
             </form>
         </SignupForm>
