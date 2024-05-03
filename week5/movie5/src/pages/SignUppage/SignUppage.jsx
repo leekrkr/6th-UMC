@@ -5,7 +5,12 @@ import {
     ErrorMessage,
     Submit,
     SignupTitle,
-    SignupForm
+    SignupForm,
+    InputBox,
+    SubmitBox,
+    Bottom,
+    Item1,
+    Item2
   
 } from './SignupStyle';
 import { useState, useEffect} from "react";
@@ -165,31 +170,35 @@ export default function SignUppage() {
         <SignupTitle>회원가입 페이지</SignupTitle>
         <SignupForm>
             <form onSubmit={handleSubmit}>
-                <div>
+                <InputBox>
                     <Input type="text" placeholder="   이름을 입력해주세요" value={fullname} onChange={onNameChange} />
                     {fullnameError && <ErrorMessage>{fullnameError}</ErrorMessage>}
-                </div>
-                <div>
+                </InputBox>
+                <InputBox>
                     <Input type="email" placeholder="   이메일을 입력해주세요" value={email} onChange={onEmailChange} />
                     {emailError && <ErrorMessage>{emailError}</ErrorMessage>}
-                </div>
-                <div>
+                </InputBox>
+                <InputBox>
                     <Input type="age" placeholder="   나이를 입력해주세요" value={age} onChange={onAgeChange} />
                     {ageError && <ErrorMessage>{ageError}</ErrorMessage>}
-                </div>       
-                <div>
+                </InputBox>       
+                <InputBox>
                     <Input type="password" placeholder="   비밀번호를 입력해주세요" value={password} onChange={onPasswordChange} />
                     {passwordError && <ErrorMessage>{passwordError}</ErrorMessage>}
-                </div>
-                <div>
+                </InputBox>
+                <InputBox>
                     <Input type="password" placeholder="   비밀번호 확인" value={pwConfirm} onChange={onPwConfirmChange} />
                     {pwConfirmError && <ErrorMessage>{pwConfirmError}</ErrorMessage>}
-                </div>
-                <div>
-                    <Submit type="submit" style={{ backgroundColor: formValid ? 'yellow' : 'gray' }} >가입하기</Submit>
-                </div>
+                </InputBox>
+                <SubmitBox>
+                    <Submit type="submit" style={{ backgroundColor: formValid ? 'yellow' : 'white' }} >가입하기</Submit>
+                </SubmitBox>
             </form>
         </SignupForm>
+        <Bottom>
+            <Item1>이미 아이디가 있으신가요?</Item1>
+            <Item2>로그인 페이지로 이동하기</Item2>
+        </Bottom>
       </Container>
     );
 }

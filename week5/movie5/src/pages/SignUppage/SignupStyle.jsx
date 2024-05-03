@@ -54,3 +54,23 @@ justify-content: center;
 align-items: center;
 margin-top : 40px;
 `;
+
+export const InputBox = styled.div`
+`;
+
+export const SubmitBox = styled.div`
+margin-top : 15px;
+`;
+
+export const Bottom = styled.div`
+display : flex;
+justify-content: space-between;
+color : white;
+margin-top : 40px;
+`;
+
+export const Item1 = styled.div`
+`;
+export const Item2 = styled.div`
+font-weight : bold;
+`;
