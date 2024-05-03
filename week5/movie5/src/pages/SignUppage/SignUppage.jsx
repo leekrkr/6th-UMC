@@ -171,23 +171,23 @@ export default function SignUppage() {
         <SignupForm>
             <form onSubmit={handleSubmit}>
                 <InputBox>
-                    <Input type="text" placeholder="   이름을 입력해주세요" value={fullname} onChange={onNameChange} />
+                    <Input type="text" placeholder="이름을 입력해주세요" value={fullname} onChange={onNameChange} />
                     {fullnameError && <ErrorMessage>{fullnameError}</ErrorMessage>}
                 </InputBox>
                 <InputBox>
-                    <Input type="email" placeholder="   이메일을 입력해주세요" value={email} onChange={onEmailChange} />
+                    <Input type="email" placeholder="이메일을 입력해주세요" value={email} onChange={onEmailChange} />
                     {emailError && <ErrorMessage>{emailError}</ErrorMessage>}
                 </InputBox>
                 <InputBox>
-                    <Input type="age" placeholder="   나이를 입력해주세요" value={age} onChange={onAgeChange} />
+                    <Input type="age" placeholder="나이를 입력해주세요" value={age} onChange={onAgeChange} />
                     {ageError && <ErrorMessage>{ageError}</ErrorMessage>}
                 </InputBox>       
                 <InputBox>
-                    <Input type="password" placeholder="   비밀번호를 입력해주세요" value={password} onChange={onPasswordChange} />
+                    <Input type="password" placeholder="비밀번호를 입력해주세요" value={password} onChange={onPasswordChange} />
                     {passwordError && <ErrorMessage>{passwordError}</ErrorMessage>}
                 </InputBox>
                 <InputBox>
-                    <Input type="password" placeholder="   비밀번호 확인" value={pwConfirm} onChange={onPwConfirmChange} />
+                    <Input type="password" placeholder="비밀번호 확인" value={pwConfirm} onChange={onPwConfirmChange} />
                     {pwConfirmError && <ErrorMessage>{pwConfirmError}</ErrorMessage>}
                 </InputBox>
                 <SubmitBox>

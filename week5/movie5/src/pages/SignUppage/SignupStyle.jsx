@@ -25,7 +25,9 @@ margin-bottom : 20px;
 font-size : 15px;
 font-family: var(--font);
 color: black;
+padding-left : 18px;
 `;
+
 
 export const ErrorMessage = styled.div`
 color: red;
