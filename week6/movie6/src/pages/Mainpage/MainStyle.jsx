@@ -14,7 +14,7 @@ margin-right : 10px;
 `;
 
 export const MainMiddle = styled.div`
-margin-top: 110px;
+margin-top: 130px;
 color: white;
 font-size: 30px;
 text-align: center;
