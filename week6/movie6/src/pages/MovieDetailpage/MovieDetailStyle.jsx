@@ -104,7 +104,7 @@ text-align : center;
 
 export const CreditBox = styled.div`
 border-radius : 10px;
-background-color: rgba(0, 0, 0, 0.3);
+background-color: rgba(0, 0, 0, 0.4);
 width : 1400px;
 justify-content: center;
 align-items: center;
