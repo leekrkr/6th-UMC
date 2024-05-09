@@ -63,8 +63,11 @@ margin-top : 35px;
 
 `;
 
-export const BackGroundImage = styled.div`
-
+export const BackGroundImage = styled.img`
+opacity: 0.1;
+z-index: -10;
+position: fixed;
+height: 100vh;
 `;
 
 export const CreditContainer = styled.div`
@@ -101,7 +104,7 @@ text-align : center;
 
 export const CreditBox = styled.div`
 border-radius : 10px;
-background-color: rgba(0, 0, 0, 0.2);
+background-color: rgba(0, 0, 0, 0.3);
 width : 1400px;
 justify-content: center;
 align-items: center;

@@ -8,25 +8,23 @@ import {
     Vote
   
   } from './movieStyle';
+  import MovieDescription from './MovieDescription';
 
 
 const baseUrl = 'https://image.tmdb.org/t/p/w200';
 
 export default function Movie ( {title, vote_average, poster_path, overview, release_date, id, backdrop_path}) {
 
-    const navigate = useNavigate();
-
-    const onClickMovieItem = () => {
-        navigate(`/movie/${id}`,{
-        state : { title, vote_average, poster_path, overview, release_date, id, backdrop_path }
-    })
-    }
-
     return(
 
         <MovieContainer>
+            <MovieDescription
+                key={title}
+                id={id}
+                title={title}
+                overview={overview} />
             <MovieImg>
-                <img src= {baseUrl + poster_path} onClick={onClickMovieItem}/>
+                <img src= {baseUrl + poster_path}/>
             </MovieImg>
             <MovieInfo>
                 <Title>{title}</Title>

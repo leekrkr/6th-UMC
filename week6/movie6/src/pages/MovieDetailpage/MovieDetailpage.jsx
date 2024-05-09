@@ -53,7 +53,7 @@ export default function MovieDetail (){
     const [movieDetail, setMovieDetail ] = useState([]);
     const [credits, setCredits] = useState([]);
     const { state } = useLocation();
-    console.log(credits);
+
 
     useEffect(() => {
         const fetchData = async () => {
