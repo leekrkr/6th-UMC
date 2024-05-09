@@ -7,11 +7,13 @@ import {
   Boxcontainer,
   Icon,
   ResultContainer,
-  Text
+  Text,
+  MovieImg
 
 } from './MainStyle';
 import { BiSearch } from "react-icons/bi";
 import Movie from '../../components/Movie';
+import movieImg from '../../assets/movieImg.png';
 
 const API_KEY = '560edcab022391706f07d9e49f92af34';
 const SEARCHURL = 'https://api.themoviedb.org/3/search/movie';
@@ -56,6 +58,7 @@ export default function Mainpage() {
         환영합니다
       </MainMiddle>
       <MainBottom>
+          <MovieImg src={movieImg} alt='movie' />
           Find your Movies!
           <Boxcontainer>
           <SearchBox

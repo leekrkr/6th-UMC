@@ -7,6 +7,12 @@ padding: 32px 0;
 background-color: black;
 `;
 
+export const MovieImg = styled.img`
+width : 50px;
+height : 50px;
+margin-right : 10px;
+`;
+
 export const MainMiddle = styled.div`
 margin-top: 110px;
 color: white;
