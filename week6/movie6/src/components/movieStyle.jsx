@@ -55,7 +55,7 @@ padding : 15px;
 export const DcOverview = styled.div`
 margin-top : 15px;
 line-height : 17px;
-font-size : 12px;
+font-size : 11px;
 `;
 
 export const DcTitle = styled.div`

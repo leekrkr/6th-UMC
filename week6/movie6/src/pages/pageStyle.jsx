@@ -5,7 +5,7 @@ width: 100%;
 display: flex;
 flex-wrap: wrap;
 gap: 16px;
-margin-top : 15px;
+margin-top : 90px;
 justify-content: center;
 align-items: center;
 `;
