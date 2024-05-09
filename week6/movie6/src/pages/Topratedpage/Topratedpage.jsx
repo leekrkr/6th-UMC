@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Movie from '../../components/Movie';
@@ -10,18 +10,23 @@ import Loading from '../Loading';
 
 const API_KEY = '560edcab022391706f07d9e49f92af34';
 
-export default function Popularpage() {
+function changeLang(lang) {
+  i18next.changeLanguage(lang);
+}
 
-  const [popular, setPopular ] = useState([]);
+
+export default function Topratedpage() {
+
+  const [topRated, settopRated ] = useState([]);
   const [loading, setloading] = useState(true);
 
   const getData = async () => {
     try {
-      const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=ko-KR&page=1`;
+      const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=ko-KR&page=1`;
       const response = await fetch(url);
       if (response.ok) {
         const data = await response.json();
-        setPopular(data.results);
+        settopRated(data.results);
         setloading(false); 
       }
     } catch (error) {
@@ -39,9 +44,10 @@ export default function Popularpage() {
       {loading ? ( 
         <Loading /> 
       ) : (
-       popular.map((item) => (
+       topRated.map((item) => (
           <Movie
           key={item.id}
+          id={item.id}
           title={item.title}
           poster_path={item.poster_path}
           vote_average={item.vote_average}

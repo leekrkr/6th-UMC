@@ -18,7 +18,7 @@ export default function Upcomingpage() {
 
   const getData = async () => {
     try {
-      const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`;
+      const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=ko-KR&page=1`;
       const response = await fetch(url);
       if (response.ok) {
         const data = await response.json();

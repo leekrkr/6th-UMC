@@ -53,17 +53,6 @@ background-color: rgb(97, 95, 118);
 border-radius : 7px;
 `;
 
-export const MovieTitle = styled.div`
-color : white;
-`;
-
-export const MovieImg = styled.div`
-
-`;
-
-export const Vote = styled.div`
-
-`;
 
 export const MovieInfo = styled.div`
 display : flex;
@@ -77,7 +66,7 @@ display : flex;
 flex-wrap: wrap;
 justify-content: center;
 align-items: center;
-background-color: rgb(29, 24, 87);
+background-color: rgba(0, 0, 0, 0.2);
 border-radius : 10px;
 margin-left : 215px;
 margin-top : 30px;
@@ -85,4 +74,10 @@ gap: 20px;
 padding : 20px;
 max-height : 500px;
 overflow-y: auto;
+`;
+
+export const Text = styled.div`
+color : white;
+text-align : center;
+margin-top : 50px;
 `;
