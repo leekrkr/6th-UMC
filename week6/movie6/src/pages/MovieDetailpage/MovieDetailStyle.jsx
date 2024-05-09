@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const DetailBox = styled.div`
+padding-bottom : 50px;
+padding-top : 70px;
+`;
+
 export const DetailContainer = styled.div`
 display : flex;
 justify-content: space-between;
@@ -65,6 +70,7 @@ margin-top : 35px;
 
 export const BackGroundImage = styled.img`
 opacity: 0.1;
+top : 0;
 z-index: -10;
 position: fixed;
 height: 100vh;

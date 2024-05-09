@@ -19,7 +19,8 @@ import {
     Profile,
     CreditTitle,
     CreditBox,
-    Role
+    Role,
+    DetailBox
 
 } from './MovieDetailStyle';
 import axios from 'axios';
@@ -72,7 +73,7 @@ export default function MovieDetail (){
 
 
     return(
-        <>
+        <DetailBox>
         <BackGroundImage src={baseUrl2 + movieDetail.backdrop_path} />
         <DetailContainer>
             <DetailImg>
@@ -114,6 +115,6 @@ export default function MovieDetail (){
             ))}
         </CreditContainer>
         </CreditBox>
-        </>
+        </DetailBox>
     );
 }
