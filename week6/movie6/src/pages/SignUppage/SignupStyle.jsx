@@ -14,6 +14,7 @@ flex-direction: column;
 export const Container = styled.div`
   max-width: 400px;
   margin: 0 auto;
+  padding-top : 90px;
 `;
 
 
