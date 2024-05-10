@@ -76,6 +76,7 @@ export default function Mainpage() {
           </Icon>
           </Boxcontainer> 
       </MainBottom>
+      <>
       {loading ? (
         <Text>데이터를 받아오는 중입니다...</Text>
       ) : (
@@ -95,6 +96,7 @@ export default function Mainpage() {
           </ResultContainer>
         )
       )}
+      </>
     </Banner>
   );
 }

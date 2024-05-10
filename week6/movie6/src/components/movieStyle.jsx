@@ -56,6 +56,7 @@ export const DcOverview = styled.div`
 margin-top : 15px;
 line-height : 17px;
 font-size : 11px;
+overflow : hidden;
 `;
 
 export const DcTitle = styled.div`
