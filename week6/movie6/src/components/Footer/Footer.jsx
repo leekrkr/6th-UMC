@@ -11,7 +11,7 @@ const FooterUrl = styled.div`
     right: 0;
     background-color: rgb(29, 30, 87);
 
-    margin-top : 30px;
+    margin-top : 60px;
     padding : 15px;
 `
 

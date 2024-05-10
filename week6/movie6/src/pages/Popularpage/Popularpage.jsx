@@ -35,6 +35,7 @@ export default function Popularpage() {
 
 
   return (
+    <>
     <AppContainer>
       {loading ? ( 
         <Loading /> 
@@ -52,5 +53,6 @@ export default function Popularpage() {
         ))
       )}
     </AppContainer>
+    </>
   );
 }
