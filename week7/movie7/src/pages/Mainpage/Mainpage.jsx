@@ -31,7 +31,7 @@ export default function Mainpage() {
       if (searchQuery) {
         handleSearch();
       } else {
-        setSearchResults([]);//배열 초기화
+        setSearchResults([]);
       }
     }, 700);
 
