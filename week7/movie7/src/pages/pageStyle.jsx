@@ -31,6 +31,7 @@ padding-bottom : 70px;
 export const PageButton1 = styled.div`
 padding : 10px;
 font-size : 20px;
+color: ${props => (props.$isValid ? 'gray' : 'white')};
 `;
 
 export const PageButton2 = styled.div`

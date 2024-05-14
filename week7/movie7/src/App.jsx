@@ -11,6 +11,7 @@ import MovieDetailpage from "./pages/MovieDetailpage/MovieDetailpage";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import { createGlobalStyle } from 'styled-components';
+import React, { useState } from 'react';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -21,12 +22,13 @@ const GlobalStyle = createGlobalStyle`
 `
 
 function App() {
+
   return (
     <>
     <GlobalStyle />
     <div className="rootWrap">
-        <BrowserRouter>
-          <NavBar />
+      <BrowserRouter>
+        <NavBar />
           <Routes>
             <Route path="/" element={<Mainpage />} />
             <Route path="/nowplaying" element={<Nowplayingpage />} />
@@ -39,7 +41,9 @@ function App() {
             <Route path="/login" element={<LogInpage />} />​
           </Routes>
           <Footer/>
+
         </BrowserRouter>
+      
     </div>
     </>
   );

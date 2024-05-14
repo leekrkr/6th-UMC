@@ -87,3 +87,7 @@ color : white;
 text-align : center;
 margin-top : 50px;
 `;
+
+export const Welcome = styled.div`
+
+`;

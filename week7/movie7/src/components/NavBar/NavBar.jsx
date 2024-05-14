@@ -1,5 +1,5 @@
-import React from 'react';
-import {useState} from 'react';
+import React, { useContext } from 'react';
+import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {
     BarContainer,
@@ -11,9 +11,28 @@ import {
     ItemList,
 } from './NavBarStyle';
 
+
+
 export default function NavBar() {
 
-  return (
+    
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if(token){
+            setIsLoggedIn(true);
+        }
+
+    }, [isLoggedIn]);
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        setIsLoggedIn(false);
+    };
+    
+
+    return (
 
     <BarContainer>
         <BarWrap>
@@ -22,7 +41,13 @@ export default function NavBar() {
                     <BarTitle>UMC&nbsp;Movie</BarTitle>
                 </Link>
                 <ListContainer>
-                    <ItemList>
+                    {isLoggedIn ? (
+                        <ItemList>
+                            <BarItemWrap onClick={handleLogout}>로그아웃</BarItemWrap>
+                        </ItemList>
+                    ) : (
+                        <>
+                        <ItemList>
                         <Link to='/login'>
                             <BarItemWrap>로그인</BarItemWrap>
                         </Link>
@@ -32,6 +57,8 @@ export default function NavBar() {
                             <BarItemWrap>회원가입</BarItemWrap>
                         </Link>
                     </ItemList>
+                        </>
+                    )}
                     <ItemList>
                         <Link to='/popular'>
                             <BarItemWrap>Popular</BarItemWrap>

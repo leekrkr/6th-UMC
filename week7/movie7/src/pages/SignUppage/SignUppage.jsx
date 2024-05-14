@@ -15,6 +15,7 @@ import {
 } from './SignupStyle';
 import { useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 
 export default function SignUppage() {
@@ -157,14 +158,30 @@ export default function SignUppage() {
       }
     };
 
-    const formData = {
-        name: { name },
-        userId: {userId},
-        email: { email },
-        age: { age },
-        password: { password },
-        pwConfirm: { pwConfirm },
-      };
+
+    const sendDataToServer = () => {
+        const formData = {
+            name: fullname,
+            email: email,
+            age: age,
+            username: userId,
+            password: password,
+            passwordCheck: pwConfirm
+        };
+
+        axios.post('http://localhost:8080/auth/signup', formData)
+            .then(response => {
+                alert('가입되었습니다!');
+                navigate('/login');
+                console.log(response);
+
+            })
+            .catch(error => {
+                console.log(error);
+                alert('회원가입에 실패했습니다.');
+            });
+    };
+
   
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -188,8 +205,7 @@ export default function SignUppage() {
             setPwConfirmError('비밀번호를 다시 입력해주세요!');
         }
         if (formValid) {
-            alert("회원가입에 성공하였습니다!");
-            console.log(formData);
+            sendDataToServer();
         }
 
 
@@ -232,7 +248,7 @@ export default function SignUppage() {
         </SignupForm>
         <Bottom>
             <Item1 onClick={onClickLogin}>이미 아이디가 있으신가요?</Item1>
-            <Item2>로그인 페이지로 이동하기</Item2>
+            <Item2 to={'/login'}>로그인 페이지로 이동하기</Item2>
         </Bottom>
       </Container>
     );

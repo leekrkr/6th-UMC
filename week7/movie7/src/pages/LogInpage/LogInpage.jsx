@@ -11,6 +11,8 @@ import {
 
 } from './LogInStyle';
 import { useState, useEffect} from "react";
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 export default function LogInpage() {
 
@@ -21,6 +23,7 @@ export default function LogInpage() {
     const [userPwError, setUserPwError] = useState('');
 
     const [formValid, setFormValid] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const validateForm = () => {
@@ -81,10 +84,19 @@ export default function LogInpage() {
             setUserPwError('비밀번호를 입력해주세요!');
         }
         if (formValid) {
-            alert("로그인 성공!");
-            console.log("UserId", userId);
-            console.log("Password:", userPassword);
-
+            axios.post('http://localhost:8080/auth/login', { username: userId, password: userPassword })
+            .then(response => {
+                alert('로그인에 성공했습니다!');
+                console.log(response.data);
+                const { accessToken } = response.data;
+                axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+                localStorage.setItem('token', response.data.token);
+                navigate('/');
+            })
+            .catch(error => {
+                console.error('로그인 실패:', error);
+                alert('로그인에 실패했습니다.');
+            });
         }
 
 

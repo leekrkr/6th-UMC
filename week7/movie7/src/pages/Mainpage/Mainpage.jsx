@@ -8,12 +8,14 @@ import {
   Icon,
   ResultContainer,
   Text,
-  MovieImg
+  MovieImg,
+  Welcome
 
 } from './MainStyle';
 import { BiSearch } from "react-icons/bi";
 import Movie from '../../components/Movie';
 import movieImg from '../../assets/movieImg.png';
+import axios from 'axios';
 
 const API_KEY = '560edcab022391706f07d9e49f92af34';
 const SEARCHURL = 'https://api.themoviedb.org/3/search/movie';
@@ -23,6 +25,7 @@ export default function Mainpage() {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [username, setUsername] = useState('');
   const [loading, setLoading] = useState('');
 
 
@@ -37,6 +40,33 @@ export default function Mainpage() {
 
     return () => clearTimeout(delayDebounce);
   }, [searchQuery]); 
+  
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+
+    if(token){
+
+      axios.get('http://localhost:8080/auth/me', {
+        headers: { Authorization: `Bearer ${token}` }}
+      )
+      .then(response => {
+        setUsername(response.data.username);
+      })
+      .catch(error => {
+        console.error('정보를 가져오는 데 실패하였습니다', error);
+      })
+    }
+
+
+  }, []);
+
+  useEffect(() => {
+    // 사용자 이름이 변경될 때마다 로컬 스토리지에 저장
+    localStorage.setItem('username', username);
+
+  }, [username]);
+  
 
 
   const handleSearch = async () => {
@@ -55,7 +85,9 @@ export default function Mainpage() {
 
     <Banner>
       <MainMiddle>
-        환영합니다
+        {username ? ( 
+          <Welcome>{username}님 환영합니다</Welcome> 
+        ) : ( <Welcome>환영합니다</Welcome>) }
       </MainMiddle>
       <MainBottom>
           <MovieImg src={movieImg} alt='movie' />

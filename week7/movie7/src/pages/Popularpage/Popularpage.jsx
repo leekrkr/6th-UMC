@@ -17,9 +17,18 @@ export default function Popularpage() {
   const [popular, setPopular] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
+  
+  // 버튼 색
+  const [isValid, setIsValid] = useState(true);
 
   useEffect(() => {
     getData();
+    if(page > 1){
+      setIsValid(false);
+    }
+    else{
+      setIsValid(true);
+    }
   }, [page]); // page가 변경될 때마다 getData() 실행
 
   const getData = async () => {
@@ -41,7 +50,10 @@ export default function Popularpage() {
   };
 
   const goPrevPage = () => {
-    setPage(page - 1);
+    if(page > 1){
+      setPage(page - 1);s
+    }
+
   };
 
   return (
@@ -67,7 +79,7 @@ export default function Popularpage() {
     </AppContainer>
     <PgContainer>
       <Pagination>
-            <PageButton1 onClick={goPrevPage} disabled={page === 1}>&lt;</PageButton1>
+            <PageButton1 onClick={goPrevPage} $isValid={isValid}>&lt;</PageButton1>
             <CurrentPage>{page}</CurrentPage>
             <PageButton2 onClick={goNextPage}>&gt;</PageButton2>
       </Pagination>

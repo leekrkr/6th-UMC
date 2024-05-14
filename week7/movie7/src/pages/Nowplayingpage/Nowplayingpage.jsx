@@ -16,7 +16,7 @@ const API_KEY = '560edcab022391706f07d9e49f92af34';
 export default function Nowplayingpage() {
 
   const [nowPlaying, setnowPlaying ] = useState([]);
-  const [loading, setloading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
 
   const getData = async () => {
@@ -26,11 +26,13 @@ export default function Nowplayingpage() {
       if (response.ok) {
         const data = await response.json();
         setnowPlaying((prevNowPlaying) => [...prevNowPlaying, ...data.results]); // 이전 영화목록과 합침
-        setloading(false); // 데이터 로드가 완료되면 로딩 상태를 false로 변경
+        setLoading(false); // 데이터 로드가 완료되면 로딩 상태를 false로 변경
         setPage((prevPage) => prevPage + 1); // 페이지 번호 업데이트
       }
     } catch (error) {
-    
+
+    } finally {
+      setLoading(false); // 데이터 로드가 완료되면 로딩 상태를 false로 변경
     }
   }
 
@@ -61,6 +63,7 @@ export default function Nowplayingpage() {
           />
           ))
         }
+        {loading && <Loading />}
       </AppContainer>
     </InfiniteScroll>
   
