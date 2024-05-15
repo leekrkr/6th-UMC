@@ -38,6 +38,16 @@ font-weight: 600;
   }
 `;
 
+export const BarItemWrap2 = styled.div`
+text-decoration: none;
+color: yellow;
+font-weight: 600;
+&:hover {
+    transform: scale(1.2);
+    transition-duration: 0.5s;
+  }
+`;
+
 export const ListContainer = styled.ul`
 display: flex;
 margin-left: 800px;
@@ -47,4 +57,11 @@ export const ItemList = styled.li`
 padding: 10px;
 margin-right: 10px;
 white-space:nowrap; 
+`;
+
+export const ItemList2 = styled.li`
+padding: 10px;
+margin-right: 10px;
+white-space:nowrap; 
+color : yellow;
 `;

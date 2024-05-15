@@ -16,6 +16,7 @@ import { BiSearch } from "react-icons/bi";
 import Movie from '../../components/Movie';
 import movieImg from '../../assets/movieImg.png';
 import axios from 'axios';
+import { useAuth } from '../../components/AuthContext';
 
 const API_KEY = '560edcab022391706f07d9e49f92af34';
 const SEARCHURL = 'https://api.themoviedb.org/3/search/movie';
@@ -27,6 +28,8 @@ export default function Mainpage() {
   const [searchResults, setSearchResults] = useState([]);
   const [username, setUsername] = useState('');
   const [loading, setLoading] = useState('');
+
+  const { isLoggedIn } = useAuth();
 
 
   useEffect(() => {
@@ -40,13 +43,12 @@ export default function Mainpage() {
 
     return () => clearTimeout(delayDebounce);
   }, [searchQuery]); 
-  
+
 
   useEffect(() => {
     const token = localStorage.getItem('token');
 
     if(token){
-
       axios.get('http://localhost:8080/auth/me', {
         headers: { Authorization: `Bearer ${token}` }}
       )
@@ -66,7 +68,7 @@ export default function Mainpage() {
     localStorage.setItem('username', username);
 
   }, [username]);
-  
+
 
 
   const handleSearch = async () => {
@@ -85,7 +87,7 @@ export default function Mainpage() {
 
     <Banner>
       <MainMiddle>
-        {username ? ( 
+        {isLoggedIn ? ( 
           <Welcome>{username}님 환영합니다</Welcome> 
         ) : ( <Welcome>환영합니다</Welcome>) }
       </MainMiddle>

@@ -9,27 +9,16 @@ import {
     BarItemWrap,
     ListContainer,
     ItemList,
+    BarItemWrap2
 } from './NavBarStyle';
+import { useAuth } from '../AuthContext';
 
 
 
 export default function NavBar() {
 
     
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-    useEffect(() => {
-        const token = localStorage.getItem('token');
-        if(token){
-            setIsLoggedIn(true);
-        }
-
-    }, [isLoggedIn]);
-
-    const handleLogout = () => {
-        localStorage.removeItem('token');
-        setIsLoggedIn(false);
-    };
+    const { isLoggedIn, logout } = useAuth();
     
 
     return (
@@ -43,7 +32,7 @@ export default function NavBar() {
                 <ListContainer>
                     {isLoggedIn ? (
                         <ItemList>
-                            <BarItemWrap onClick={handleLogout}>로그아웃</BarItemWrap>
+                            <BarItemWrap2 onClick={logout}>로그아웃</BarItemWrap2>
                         </ItemList>
                     ) : (
                         <>

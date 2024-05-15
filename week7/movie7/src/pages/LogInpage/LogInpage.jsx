@@ -13,6 +13,7 @@ import {
 import { useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+import { useAuth } from '../../components/AuthContext';
 
 export default function LogInpage() {
 
@@ -24,6 +25,10 @@ export default function LogInpage() {
 
     const [formValid, setFormValid] = useState(false);
     const navigate = useNavigate();
+
+    const { login } = useAuth();
+
+    
 
     useEffect(() => {
         const validateForm = () => {
@@ -91,6 +96,7 @@ export default function LogInpage() {
                 const { accessToken } = response.data;
                 axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
                 localStorage.setItem('token', response.data.token);
+                login();
                 navigate('/');
             })
             .catch(error => {

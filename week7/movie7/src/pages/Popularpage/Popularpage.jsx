@@ -14,6 +14,7 @@ import {
 const API_KEY = '560edcab022391706f07d9e49f92af34';
 
 export default function Popularpage() {
+  
   const [popular, setPopular] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
