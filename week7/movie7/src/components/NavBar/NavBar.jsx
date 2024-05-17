@@ -29,7 +29,7 @@ export default function NavBar() {
                 <Link to='/'>
                     <BarTitle>UMC&nbsp;Movie</BarTitle>
                 </Link>
-                <ListContainer>
+                <ListContainer isLoggedIn={isLoggedIn}>
                     {isLoggedIn ? (
                         <ItemList>
                             <BarItemWrap2 onClick={logout}>로그아웃</BarItemWrap2>

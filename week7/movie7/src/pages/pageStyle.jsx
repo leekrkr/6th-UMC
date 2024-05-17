@@ -7,7 +7,7 @@ flex-wrap: wrap;
 gap: 16px;
 justify-content: center;
 align-items: center;
-padding-bottom : 20px;
+padding-bottom : 50px;
 padding-top : 90px;
 `;
 
@@ -31,7 +31,7 @@ padding-bottom : 70px;
 export const PageButton1 = styled.div`
 padding : 10px;
 font-size : 20px;
-color: ${props => (props.$isValid ? 'gray' : 'white')};
+color: ${props => (props.page === 1 ? 'gray' : 'white')};
 `;
 
 export const PageButton2 = styled.div`

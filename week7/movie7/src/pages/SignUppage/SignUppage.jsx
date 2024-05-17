@@ -177,7 +177,7 @@ export default function SignUppage() {
 
             })
             .catch(error => {
-                console.log(error);
+                console.error(error);
                 alert('회원가입에 실패했습니다.');
             });
     };

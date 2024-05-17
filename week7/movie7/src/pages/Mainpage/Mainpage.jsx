@@ -9,7 +9,8 @@ import {
   ResultContainer,
   Text,
   MovieImg,
-  Welcome
+  Welcome,
+  BannerText
 
 } from './MainStyle';
 import { BiSearch } from "react-icons/bi";
@@ -27,6 +28,9 @@ export default function Mainpage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [username, setUsername] = useState('');
+  const [name, setName] = useState('');
+  const [age, setAge] = useState('');
+  const [email, setEmail] = useState('');
   const [loading, setLoading] = useState('');
 
   const { isLoggedIn } = useAuth();
@@ -53,10 +57,15 @@ export default function Mainpage() {
         headers: { Authorization: `Bearer ${token}` }}
       )
       .then(response => {
-        setUsername(response.data.username);
+        const userData = response.data;
+        const { username, name, age, email} = userData;
+        setUsername(username);
+        setName(name);
+        setAge(age);
+        setEmail(email);
       })
       .catch(error => {
-        console.error('정보를 가져오는 데 실패하였습니다', error);
+        console.error(error);
       })
     }
 
@@ -69,8 +78,6 @@ export default function Mainpage() {
 
   }, [username]);
 
-
-
   const handleSearch = async () => {
     try {
       setLoading(true);
@@ -79,7 +86,7 @@ export default function Mainpage() {
       setSearchResults(data.results);
       setLoading(false);
     } catch (error) {
-      console.error('Error searching movies:', error);
+      console.error(error);
     }
   };
 
@@ -87,9 +94,15 @@ export default function Mainpage() {
 
     <Banner>
       <MainMiddle>
-        {isLoggedIn ? ( 
-          <Welcome>{username}님 환영합니다</Welcome> 
-        ) : ( <Welcome>환영합니다</Welcome>) }
+      {isLoggedIn === undefined ? (
+          <BannerText>배너에 로딩 중...</BannerText>
+        ) : (
+          isLoggedIn ? (
+              <Welcome>{username}님 환영합니다</Welcome> 
+            ) : (
+                <Welcome>환영합니다</Welcome>
+              )
+      )}
       </MainMiddle>
       <MainBottom>
           <MovieImg src={movieImg} alt='movie' />

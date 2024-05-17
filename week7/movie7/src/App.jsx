@@ -13,6 +13,8 @@ import Footer from "./components/Footer/Footer";
 import { createGlobalStyle } from 'styled-components';
 import React, { useState } from 'react';
 import { AuthProvider } from "./components/AuthContext";
+import queryClient from "./components/queryClient";
+import { QueryClientProvider } from 'react-query';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -31,6 +33,7 @@ function App() {
     <div className="rootWrap">
       <BrowserRouter>
       <AuthProvider>
+          <QueryClientProvider client={queryClient}>
           <NavBar/>
           <Routes>
             <Route path="/" element={<Mainpage />} />
@@ -44,6 +47,7 @@ function App() {
             <Route path="/login" element={<LogInpage />} />​
           </Routes>
           <Footer/>
+          </QueryClientProvider>
           </AuthProvider>
         </BrowserRouter>
       

@@ -91,3 +91,7 @@ margin-top : 50px;
 export const Welcome = styled.div`
 
 `;
+
+export const BannerText = styled.div`
+
+`;

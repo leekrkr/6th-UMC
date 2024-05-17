@@ -100,7 +100,7 @@ export default function LogInpage() {
                 navigate('/');
             })
             .catch(error => {
-                console.error('로그인 실패:', error);
+                console.error(error);
                 alert('로그인에 실패했습니다.');
             });
         }

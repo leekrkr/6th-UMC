@@ -56,7 +56,9 @@ export const DcOverview = styled.div`
 margin-top : 15px;
 line-height : 15px;
 font-size : 10px;
-overflow : hidden;
+max-height: 300px; 
+overflow: hidden; 
+text-overflow: ellipsis;
 `;
 
 export const DcTitle = styled.div`

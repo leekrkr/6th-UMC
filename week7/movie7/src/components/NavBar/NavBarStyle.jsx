@@ -26,6 +26,7 @@ font-size: 20px;
 
 export const BarWrapRight = styled.div`
 display: flex;
+
 `;
 
 export const BarItemWrap = styled.div`
@@ -50,7 +51,7 @@ font-weight: 600;
 
 export const ListContainer = styled.ul`
 display: flex;
-margin-left: 800px;
+margin-left: ${({ isLoggedIn }) => isLoggedIn ? '860px' : '790px'};
 `;
 
 export const ItemList = styled.li`
