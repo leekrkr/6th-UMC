@@ -92,8 +92,7 @@ export default function LogInpage() {
             .then(response => {
                 alert('로그인에 성공했습니다!');
                 console.log(response.data);
-                const { accessToken } = response.data;
-                axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+                axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.accessToken}`; 
                 localStorage.setItem('token', response.data.token); // localStorage에 저장함으로써 로그인 유지
                 login();
                 navigate('/');
