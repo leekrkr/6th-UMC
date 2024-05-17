@@ -30,7 +30,7 @@ export default function Nowplayingpage() {
     }
   );
 
-  const nowPlaying = data.pages.flatMap(page => page.results);
+  const nowPlaying = data?.pages.flatMap(page => page.results);
 
   return (
     <>
