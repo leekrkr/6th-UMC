@@ -1,4 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { createGlobalStyle } from 'styled-components';
+import { QueryClientProvider } from 'react-query';
+import { AuthProvider } from "./components/AuthContext";
 import Mainpage from "./pages/Mainpage/Mainpage";
 import Nowplayingpage from "./pages/Nowplayingpage/Nowplayingpage";
 import Popularpage from "./pages/Popularpage/Popularpage";
@@ -10,11 +13,8 @@ import LogInpage from "./pages/LogInpage/LogInpage";
 import MovieDetailpage from "./pages/MovieDetailpage/MovieDetailpage";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import { createGlobalStyle } from 'styled-components';
-import React, { useState } from 'react';
-import { AuthProvider } from "./components/AuthContext";
+import React from 'react';
 import queryClient from "./components/queryClient";
-import { QueryClientProvider } from 'react-query';
 
 
 const GlobalStyle = createGlobalStyle`

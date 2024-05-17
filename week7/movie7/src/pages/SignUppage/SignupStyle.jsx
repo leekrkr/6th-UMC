@@ -45,6 +45,7 @@ text-align: center;
 color : black;
 font-size : 18px;
 font-family: var(--font);
+background-color : ${props => (props.$formValid ? 'yellow' : 'white')};
 
 `;
 

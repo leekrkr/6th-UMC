@@ -1,5 +1,5 @@
 // AuthContext.js
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useState, useContext } from 'react';
 
 const AuthContext = createContext();
 
@@ -7,7 +7,7 @@ export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
 
-    const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('token'));
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const login = () => {
         setIsLoggedIn(true);

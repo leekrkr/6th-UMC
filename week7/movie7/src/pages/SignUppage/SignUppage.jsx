@@ -96,50 +96,50 @@ export default function SignUppage() {
     };
   
     const onAgeChange = (e) => {
-      const value = e.target.value;
-      setAge(value);
-      if (!value){
-        setAgeError('나이를 입력해주세요!');
+        const value = e.target.value;
+        setAge(value);
+        if (!value){
+            setAgeError('나이를 입력해주세요!');
   
-    } else if(isNaN(value) === true){
-        setAgeError('나이는 숫자로 입력해주세요!');
-    }
-    else if (value < 0){
-        setAgeError('나이는 양수여야합니다!');
+        } else if(isNaN(value) === true){
+            setAgeError('나이는 숫자로 입력해주세요!');
+
+        } else if (value < 0){
+            setAgeError('나이는 양수여야합니다!');
+
+        } else if (value % 1 !== 0){
+            setAgeError('나이를 실수로 입력할 수 없습니다!');
   
-    } else if (value % 1 !== 0){
-        setAgeError('나이를 실수로 입력할 수 없습니다!');
+        } else if (value < 19){
+            setAgeError('19세 이상만 사용 가능합니다!');
   
-    } else if (value < 19){
-        setAgeError('19세 이상만 사용 가능합니다!');
-  
-    } else {
-        setAgeError('');
-    }
+        } else {
+            setAgeError('');
+        }
     }
   
     const onPasswordChange = (e) => {
-      const value = e.target.value;
-      setPassword(value);
+        const value = e.target.value;
+        setPassword(value);
       
-      var pwRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{4,12}$/;
+        var pwRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{4,12}$/;
       
-      if (!value) {
-          setPasswordError('비밀번호를 입력해주세요!');
+        if (!value) {
+            setPasswordError('비밀번호를 입력해주세요!');
   
-      } else if (value.length < 4) {
-          setPasswordError('최소 4자리 이상 입력해주세요!');
+        } else if (value.length < 4) {
+            setPasswordError('최소 4자리 이상 입력해주세요!');
   
-      } else if (value.length >12){
-          setPasswordError('최대 12자리까지 입력 가능합니다!');
+        } else if (value.length >12){
+            setPasswordError('최대 12자리까지 입력 가능합니다!');
   
-      } else if (!pwRegex.test(value)){
-          setPasswordError('비밀번호는 영어, 숫자, 특수문자를 포함해주세요!');
-      }
-      else {
+        } else if (!pwRegex.test(value)){
+            setPasswordError('비밀번호는 영어, 숫자, 특수문자를 포함해주세요!');
+        }
+        else {
             setPasswordError('');
 
-      }
+        }
     };
   
     const onPwConfirmChange = (e) => {
@@ -241,14 +241,14 @@ export default function SignUppage() {
                     {pwConfirmError && <ErrorMessage>{pwConfirmError}</ErrorMessage>}
                 </InputBox>
                 <SubmitBox>
-                    <Submit type="submit" style={{ backgroundColor: formValid ? 'yellow' : 'white' }} >가입하기</Submit>
+                    <Submit type="submit" $formValid={formValid} >가입하기</Submit>
 
                 </SubmitBox>
             </form>
         </SignupForm>
         <Bottom>
             <Item1 onClick={onClickLogin}>이미 아이디가 있으신가요?</Item1>
-            <Item2 to={'/login'}>로그인 페이지로 이동하기</Item2>
+            <Item2 onClick={onClickLogin}>로그인 페이지로 이동하기</Item2>
         </Bottom>
       </Container>
     );

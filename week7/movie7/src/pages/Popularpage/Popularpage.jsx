@@ -2,27 +2,32 @@ import React, { useState, useEffect } from 'react';
 import Movie from '../../components/Movie';
 import Loading from '../Loading';
 import { useQuery } from 'react-query';
-import { AppContainer, Pagination, PageButton1, PageButton2, CurrentPage, PgContainer } from '../pageStyle';
+import { 
+  AppContainer, 
+  Pagination, 
+  PageButton1, 
+  PageButton2, 
+  CurrentPage, 
+  PgContainer 
+} from '../pageStyle';
 
 const API_KEY = '560edcab022391706f07d9e49f92af34';
 
 export default function Popularpage() {
+
   const [page, setPage] = useState(1);
 
   const getPopularData = async (page) => {
-    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=ko-KR&page=${page}`;
+    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=ko-KR&page=${page}`; 
     const response = await fetch(url);
     if (!response.ok) {
-      console.error('error');
+      console.error(error);
     }
     return response.json();
   };
 
-  const { data, isLoading, isError, isSuccess } = useQuery(['popularMovies', page], () => getPopularData(page));
+  const { data, isLoading, isSuccess } = useQuery(['popularMovies', page], () => getPopularData(page)); // queryKey & queryFn
 
-  const goNextPage = () => {
-    setPage((prevPage) => prevPage + 1);
-  };
 
   const goPrevPage = () => {
     if (page > 1) {
@@ -30,13 +35,16 @@ export default function Popularpage() {
     }
   };
 
+  const goNextPage = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
+
+
   return (
     <>
       <AppContainer>
         {isLoading ? (
           <Loading />
-        ) : isError ? (
-          <div>Error fetching data</div>
         ) : isSuccess && data ? (
           <>
             {data.results.map((item) => (

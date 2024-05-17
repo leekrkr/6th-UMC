@@ -28,19 +28,18 @@ export default function LogInpage() {
 
     const { login } = useAuth();
 
-    
 
     useEffect(() => {
         const validateForm = () => {
-            if ( userId && userPassword &&
-                !userIdError && !userPwError) {
+            if ( userId && userPassword && !userIdError && !userPwError) {
                 setFormValid(true);
             } else {
                 setFormValid(false);
             }
         };
         validateForm();
-    }, [userId, userPassword, userIdError, userPwError]);
+    }, [userId, userPassword, userIdError, userPwError]); 
+
 
     const onIdChange = (e) => {
         const value = e.target.value;
@@ -52,10 +51,10 @@ export default function LogInpage() {
           setUserIdError('');
         }
   
-      };
+    };
 
  
-      const onPwChange = (e) => {
+    const onPwChange = (e) => {
         const value = e.target.value;
         setUserPassword(value);
         
@@ -77,9 +76,9 @@ export default function LogInpage() {
               setUserPwError('');
   
         }
-      };
+    };
 
-      const handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
   
         if (!userId) {
@@ -95,7 +94,7 @@ export default function LogInpage() {
                 console.log(response.data);
                 const { accessToken } = response.data;
                 axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
-                localStorage.setItem('token', response.data.token);
+                localStorage.setItem('token', response.data.token); // localStorage에 저장함으로써 로그인 유지
                 login();
                 navigate('/');
             })
@@ -104,8 +103,6 @@ export default function LogInpage() {
                 alert('로그인에 실패했습니다.');
             });
         }
-
-
     };
 
     return(
@@ -122,7 +119,7 @@ export default function LogInpage() {
                         {userPwError && <ErrorMessage>{userPwError}</ErrorMessage>}
                     </InputBox>
                     <SubmitBox>
-                        <Submit type="submit" style={{ backgroundColor: formValid ? 'yellow' : 'white' }} >로그인</Submit>
+                        <Submit type="submit" $formValid={formValid} >로그인</Submit>
                     </SubmitBox>
                 </form>
             </LoginForm>
