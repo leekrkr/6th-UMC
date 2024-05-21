@@ -77,7 +77,7 @@ export default function MovieDetail (){
         <BackGroundImage src={baseUrl2 + movieDetail.backdrop_path} />
         <DetailContainer>
             <DetailImg>
-                <img src= {baseUrl + movieDetail.poster_path} width = "350px"/>
+                <img src= {baseUrl + movieDetail.poster_path}/>
             </DetailImg>
             <DetailInfo>
                 <DetailTitle>{movieDetail.title}</DetailTitle>
