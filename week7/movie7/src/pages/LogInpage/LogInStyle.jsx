@@ -35,7 +35,7 @@ padding-left : 18px;
   }
 
 @media (max-width: 480px) {
-    width : 330px;
+    width : 300px;
     font-size : 13px;
 }
 `;
@@ -97,7 +97,7 @@ background-color : ${props => (props.$formValid ? 'yellow' : 'white')};
   }
 
 @media (max-width: 480px) {
-    width : 350px;
+    width : 320px;
     height : 50px;
     font-size : 14px;
 }

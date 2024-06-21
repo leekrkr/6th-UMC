@@ -15,7 +15,7 @@ import {
   MenuItem,
 
 } from './NavBarStyle';
-import { useAuth } from '../AuthContext';
+import { useAuth } from '../AuthContext'; 
 
 export default function NavBar() {
   const { isLoggedIn, logout } = useAuth();
@@ -23,19 +23,17 @@ export default function NavBar() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const handleResize = () => {
-    setIsMobile(window.innerWidth <= 768);
+    setIsMobile(window.innerWidth <= 768); // 창 크기에 따라 isMobile 상태 변경
+  };
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen); // 클릭딜 때 isSidebarOpen의 상태를 바꿈
   };
 
   useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+    window.addEventListener('resize', handleResize); // 창 크기가 변경될 때마다 isMobile의 상태를 변경
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!isSidebarOpen);
-  };
+  }, []);
 
   return (
     <BarContainer>
@@ -45,7 +43,8 @@ export default function NavBar() {
         </Link>
         {isMobile ? (
           <>
-            <SidebarToggle onClick={toggleSidebar}>☰</SidebarToggle>
+          <SidebarToggle onClick={toggleSidebar}>☰</SidebarToggle>
+          <>
             <Sidebar isOpen={isSidebarOpen}>
               {isLoggedIn ? (
                 <MenuItem onClick={logout}>로그아웃</MenuItem>
@@ -60,7 +59,7 @@ export default function NavBar() {
                 </>
               )}
               <Menu>
-                <MenuItem onClick={toggleSidebar}>
+                <MenuItem onClick={toggleSidebar}> 
                   <Link to='/popular'>
                     <BarItemWrap>Popular</BarItemWrap>
                 </Link>
@@ -82,6 +81,7 @@ export default function NavBar() {
                 </MenuItem>
               </Menu>
             </Sidebar>
+          </>
           </>
         ) : (
           <BarWrapRight>

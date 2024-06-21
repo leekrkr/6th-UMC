@@ -56,6 +56,7 @@ export const BarItemWrap = styled.div`
     transition-duration: 0.5s;
     color : yellow;
   }
+
   
 `;
 
@@ -63,6 +64,7 @@ export const BarItemWrap2 = styled.div`
   text-decoration: none;
   color: yellow;
   font-weight: 600;
+
 
   &:hover {
     transform: scale(1.1);
@@ -82,21 +84,22 @@ export const ItemList = styled.li`
 export const Sidebar = styled.aside`
   position: fixed;
   top: 0;
-  right: ${({ isOpen }) => (isOpen ? '0' : '-290px')};
-  width: 250px;
-  height: 100%;
+  right: ${({ isOpen }) => (isOpen ? '0' : '-110%')};
+  height: 100vh;
   background-color: rgb(29, 30, 87);
+  margin-top : 63px;
   padding: 20px;
   transition: right 0.3s ease-in-out;
   z-index: 2000;
 
-  @media (min-width: 768px) {
-    display: none;
+  @media (max-width: 768px) {
+    width: 95%;
   }
 
 
 @media (max-width : 480px) {
   font-size : 15px;
+  width : 90%;
 }
 `;
 
@@ -129,9 +132,10 @@ export const Menu = styled.ul`
 `;
 
 export const MenuItem = styled.li`
-  padding: 10px 0;
+  padding: 15px 0;
   color: white;
   cursor: pointer;
+  list-style : none;
 
   &:hover {
     transform: scale(1.1);
