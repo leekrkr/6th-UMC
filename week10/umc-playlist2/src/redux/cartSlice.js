@@ -5,7 +5,7 @@ export const fetchCartItems = createAsyncThunk(
   'cart/fetchCartItems',
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get('http://localhost:8080/musics1');
+      const response = await axios.get('http://localhost:8080/musics');
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue('에러가 발생했습니다. 데이터 요청 경로를 확인해주세요!');
